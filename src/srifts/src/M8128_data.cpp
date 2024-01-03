@@ -25,7 +25,7 @@ TurnOnSensor::TurnOnSensor(): Node("SRI_node"),Sampling_Time(0){
         M8128_Serial.write(start_cmd);
     }
 
-    timer_ = this->create_wall_timer(std::chrono::milliseconds(100), std::bind(&TurnOnSensor::sensor_run, this));
+    timer_ = this->create_wall_timer(std::chrono::milliseconds(1), std::bind(&TurnOnSensor::sensor_run, this));
 }
 
 
